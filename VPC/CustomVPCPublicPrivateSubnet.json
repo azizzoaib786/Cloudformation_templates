@@ -1,0 +1,84 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "vpc0e55cef3e710bcea8": {
+      "Type": "AWS::EC2::VPC",
+      "Properties": {
+        "CidrBlock": "10.3.0.0/16",
+        "InstanceTenancy": "default",
+        "EnableDnsSupport": "true",
+        "EnableDnsHostnames": "false",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Sandbox-Polytechnic "
+          }
+        ]
+      }
+    },
+    "subnet0bd79d56ecc3af650": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.3.1.0/24",
+        "AvailabilityZone": "eu-west-1c",
+        "VpcId": {
+          "Ref": "vpc0e55cef3e710bcea8"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "10.3.1.0 - eu-west-1c - Public - Ireland"
+          }
+        ]
+      }
+    },
+    "subnet051f352dd31c41b31": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.3.2.0/24",
+        "AvailabilityZone": "eu-west-1c",
+        "VpcId": {
+          "Ref": "vpc0e55cef3e710bcea8"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "10.3.2.0 - eu-west-1c - Private - Ireland"
+          }
+        ]
+      }
+    },
+    "subnet04516c75f86a6c24b": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.3.3.0/24",
+        "AvailabilityZone": "eu-west-1b",
+        "VpcId": {
+          "Ref": "vpc0e55cef3e710bcea8"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "10.3.3.0 - us-west-1b - Private - Ireland"
+          }
+        ]
+      }
+    },
+    "subnet0ef89b108f437aa73": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.3.4.0/24",
+        "AvailabilityZone": "eu-west-1b",
+        "VpcId": {
+          "Ref": "vpc0e55cef3e710bcea8"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "10.3.4.0 - us-west-1b - Public - Ireland"
+          }
+        ]
+      }
+    }
+  }
+}
